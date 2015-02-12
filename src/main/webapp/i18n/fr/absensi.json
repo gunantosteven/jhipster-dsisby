@@ -1,0 +1,20 @@
+{
+    "dsisbyApp": {
+        "absensi" : {
+            "home": {
+                "title": "Absensis",
+                "createLabel": "Créer un nouveau Absensi",
+                "createOrEditLabel": "Créer ou éditer un Absensi"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Absensi {{ id }} ?"
+            },
+            "detail": {
+                "title": "Absensi"
+            },
+            "namaFile": "NamaFile",
+            "file" : "File"
+        }
+    }
+}
+

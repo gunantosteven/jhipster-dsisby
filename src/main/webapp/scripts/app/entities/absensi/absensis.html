@@ -1,0 +1,126 @@
+<div>
+
+    <h2 translate="dsisbyApp.absensi.home.title">Absensi</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveAbsensiModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="dsisbyApp.absensi.home.createLabel">Create a new Absensi</span>
+    </button>
+    <div class="modal fade" id="saveAbsensiModal" tabindex="-1" role="dialog" aria-labelledby="myAbsensiLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()" enctype="multipart/form-data">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myAbsensiLabel" translate="dsisbyApp.absensi.home.createOrEditLabel">Create or edit a Absensi</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="absensi.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="dsisbyApp.absensi.namaFile">NamaFile</label>
+                            <input type="text" class="form-control"
+                                   ng-model="absensi.namaFile">
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="dsisbyApp.absensi.file">File</label>
+                            <input id="file" name="file"  type="file" class="form-control file" ng-model="absensi.file"  accept=".csv,.xsl,.xml,.mpp,application/vnd.ms-excel">
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteAbsensiConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" ng-submit="confirmDelete(absensi.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="dsisbyApp.absensi.delete.question" translate-values="{id: '{{absensi.id}}'}">Are you sure you want to delete Absensi {{absensi.id}}?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="dsisbyApp.absensi.namaFile">NamaFile</th>
+                    <th translate="dsisbyApp.absensi.file">File</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="absensi in absensis">
+                    <td><a ui-sref="absensiDetail({id:absensi.id})">{{absensi.id}}</a></td>
+                    <td> {{absensi.namaFile}} </td> 
+                    <td><a href="data:application/vnd.ms-excel;content-disposition:attachment;base64,{{absensi.file}}" download="{{absensi.namaFile}}">Download</a></td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="absensiDetail({id:absensi.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(absensi.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(absensi.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    
+    function saveContent(fileContents, fileName)
+    {
+        var link = document.createElement('a');
+        link.download = fileName;
+        link.href = 'data:,' + fileContents;
+        link.click();
+    }
+</script>    
+    

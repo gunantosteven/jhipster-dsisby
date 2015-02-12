@@ -1,0 +1,110 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "otherEntityName": "ijin",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Ijin"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "idAbsensi",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "IdAbsensi",
+            "fieldNameUnderscored": "id_absensi"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "namaLengkap",
+            "fieldType": "String",
+            "fieldNameCapitalized": "NamaLengkap",
+            "fieldNameUnderscored": "nama_lengkap"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "nickname",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Nickname",
+            "fieldNameUnderscored": "nickname"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "startWorking",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "StartWorking",
+            "fieldNameUnderscored": "start_working"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Status",
+            "fieldNameUnderscored": "status"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "phone",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Phone",
+            "fieldNameUnderscored": "phone"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "birthday",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "Birthday",
+            "fieldNameUnderscored": "birthday"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "tempatLahir",
+            "fieldType": "String",
+            "fieldNameCapitalized": "TempatLahir",
+            "fieldNameUnderscored": "tempat_lahir"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "alamatTinggal",
+            "fieldType": "String",
+            "fieldNameCapitalized": "AlamatTinggal",
+            "fieldNameUnderscored": "alamat_tinggal"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "namaKeluarga",
+            "fieldType": "String",
+            "fieldNameCapitalized": "NamaKeluarga",
+            "fieldNameUnderscored": "nama_keluarga"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "hpKeluarga",
+            "fieldType": "String",
+            "fieldNameCapitalized": "HpKeluarga",
+            "fieldNameUnderscored": "hp_keluarga"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "hubunganKeluarga",
+            "fieldType": "String",
+            "fieldNameCapitalized": "HubunganKeluarga",
+            "fieldNameUnderscored": "hubungan_keluarga"
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "jumlahAnak",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "JumlahAnak",
+            "fieldNameUnderscored": "jumlah_anak"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "changelogDate": "20150210172512"
+}

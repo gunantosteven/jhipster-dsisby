@@ -1,0 +1,32 @@
+{
+    "dsisbyApp": {
+        "karyawan" : {
+            "home": {
+                "title": "Karyawans",
+                "createLabel": "Créer un nouveau Karyawan",
+                "createOrEditLabel": "Créer ou éditer un Karyawan"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Karyawan {{ id }} ?"
+            },
+            "detail": {
+                "title": "Karyawan"
+            },
+            "idAbsensi": "IdAbsensi",
+            "namaLengkap": "NamaLengkap",
+            "nickname": "Nickname",
+            "startWorking": "StartWorking",
+            "status": "Status",
+            "phone": "Phone",
+            "birthday": "Birthday",
+            "tempatLahir": "TempatLahir",
+            "alamatTinggal": "AlamatTinggal",
+            "namaKeluarga": "NamaKeluarga",
+            "hpKeluarga": "HpKeluarga",
+            "hubunganKeluarga": "HubunganKeluarga",
+            "jumlahAnak": "JumlahAnak",
+            "ijin": "ijin"
+        }
+    }
+}
+

@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="dsisbyApp.ijin.detail.title">Ijin</span> {{ijin.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.ijin.tanggalIjin">TanggalIjin</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{ijin.tanggalIjin}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.ijin.dari">Dari</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{ijin.dari}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.ijin.sampai">Sampai</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{ijin.sampai}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.ijin.alasan">Alasan</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{ijin.alasan}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.ijin.karyawan">karyawan</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{ijin.karyawan.namaLengkap}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="ijin"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

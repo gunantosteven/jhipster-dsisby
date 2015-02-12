@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Karyawan.
+    -->
+    <changeSet id="20150210172512" author="jhipster">
+        <createTable tableName="T_KARYAWAN">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_absensi" type="integer"/>
+            <column name="nama_lengkap" type="varchar(255)"/>
+            <column name="nickname" type="varchar(255)"/>
+            <column name="start_working" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="status" type="varchar(255)"/>
+            <column name="phone" type="varchar(255)"/>
+            <column name="birthday" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="tempat_lahir" type="varchar(255)"/>
+            <column name="alamat_tinggal" type="varchar(255)"/>
+            <column name="nama_keluarga" type="varchar(255)"/>
+            <column name="hp_keluarga" type="varchar(255)"/>
+            <column name="hubungan_keluarga" type="varchar(255)"/>
+            <column name="jumlah_anak" type="integer"/>
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>

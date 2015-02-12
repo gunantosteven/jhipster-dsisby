@@ -1,0 +1,70 @@
+<div>
+
+    <h2 translate="dsisbyApp.ijin.home.title">Ijin</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveIjinModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="dsisbyApp.ijin.home.createLabel">Create a new Ijin</span>
+    </button>
+    <div class="modal fade" id="saveIjinModal" tabindex="-1" role="dialog" aria-labelledby="myIjinLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myIjinLabel" translate="dsisbyApp.ijin.home.createOrEditLabel">Create or edit a Ijin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="ijin.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="dsisbyApp.ijin.tanggalIjin">TanggalIjin</label>
+                            <input type="date" class="form-control"
+                                   ng-model="ijin.tanggalIjin">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.ijin.dari">Dari</label>
+                            <input type="date" class="form-control"
+                                   ng-model="ijin.dari">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.ijin.sampai">Sampai</label>
+                            <input type="date" class="form-control"
+                                   ng-model="ijin.sampai">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.ijin.alasan">Alasan</label>
+                            <input type="text" class="form-control"
+                                   ng-model="ijin.alasan">
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="dsisbyApp.ijin.karyawan">karyawan</label>
+                            <select class="form-control" ng-model="ijin.karyawan.id" ng-options="karyawan.id as karyawan.namaLengkap for karyawan in karyawans" >
+                            
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

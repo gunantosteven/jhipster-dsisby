@@ -1,0 +1,23 @@
+{
+    "dsisbyApp": {
+        "ijin" : {
+            "home": {
+                "title": "Ijins",
+                "createLabel": "Créer un nouveau Ijin",
+                "createOrEditLabel": "Créer ou éditer un Ijin"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Ijin {{ id }} ?"
+            },
+            "detail": {
+                "title": "Ijin"
+            },
+            "tanggalIjin": "TanggalIjin",
+            "dari": "Dari",
+            "sampai": "Sampai",
+            "alasan": "Alasan",
+            "karyawan": "karyawan"
+        }
+    }
+}
+

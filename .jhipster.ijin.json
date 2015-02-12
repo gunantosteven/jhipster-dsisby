@@ -1,0 +1,48 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "otherEntityName": "karyawan",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Karyawan",
+            "otherEntityField": "namaLengkap"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "tanggalIjin",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "TanggalIjin",
+            "fieldNameUnderscored": "tanggal_ijin"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "dari",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "Dari",
+            "fieldNameUnderscored": "dari"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "sampai",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "Sampai",
+            "fieldNameUnderscored": "sampai"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "alasan",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Alasan",
+            "fieldNameUnderscored": "alasan"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "changelogDate": "20150210173143"
+}

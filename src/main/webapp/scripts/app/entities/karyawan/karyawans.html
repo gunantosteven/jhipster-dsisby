@@ -1,0 +1,192 @@
+<div>
+
+    <h2 translate="dsisbyApp.karyawan.home.title">Karyawan</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveKaryawanModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="dsisbyApp.karyawan.home.createLabel">Create a new Karyawan</span>
+    </button>
+    <div class="modal fade" id="saveKaryawanModal" tabindex="-1" role="dialog" aria-labelledby="myKaryawanLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myKaryawanLabel" translate="dsisbyApp.karyawan.home.createOrEditLabel">Create or edit a Karyawan</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="karyawan.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.idAbsensi">IdAbsensi</label>
+                            <input type="number" class="form-control"
+                                   ng-model="karyawan.idAbsensi">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.namaLengkap">NamaLengkap</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.namaLengkap">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.nickname">Nickname</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.nickname">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.startWorking">StartWorking</label>
+                            <input type="date" class="form-control"
+                                   ng-model="karyawan.startWorking">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.status">Status</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.status">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.phone">Phone</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.phone">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.birthday">Birthday</label>
+                            <input type="date" class="form-control"
+                                   ng-model="karyawan.birthday">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.tempatLahir">TempatLahir</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.tempatLahir">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.alamatTinggal">AlamatTinggal</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.alamatTinggal">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.namaKeluarga">NamaKeluarga</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.namaKeluarga">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.hpKeluarga">HpKeluarga</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.hpKeluarga">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.hubunganKeluarga">HubunganKeluarga</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.hubunganKeluarga">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.jumlahAnak">JumlahAnak</label>
+                            <input type="number" class="form-control"
+                                   ng-model="karyawan.jumlahAnak">
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteKaryawanConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" ng-submit="confirmDelete(karyawan.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="dsisbyApp.karyawan.delete.question" translate-values="{id: '{{karyawan.id}}'}">Are you sure you want to delete Karyawan {{karyawan.id}}?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="dsisbyApp.karyawan.idAbsensi">IdAbsensi</th>
+                    <th translate="dsisbyApp.karyawan.namaLengkap">NamaLengkap</th>
+                    <th translate="dsisbyApp.karyawan.nickname">Nickname</th>
+                    <th translate="dsisbyApp.karyawan.startWorking">StartWorking</th>
+                    <th translate="dsisbyApp.karyawan.status">Status</th>
+                    <th translate="dsisbyApp.karyawan.phone">Phone</th>
+                    <th translate="dsisbyApp.karyawan.birthday">Birthday</th>
+                    <th translate="dsisbyApp.karyawan.tempatLahir">TempatLahir</th>
+                    <th translate="dsisbyApp.karyawan.alamatTinggal">AlamatTinggal</th>
+                    <th translate="dsisbyApp.karyawan.namaKeluarga">NamaKeluarga</th>
+                    <th translate="dsisbyApp.karyawan.hpKeluarga">HpKeluarga</th>
+                    <th translate="dsisbyApp.karyawan.hubunganKeluarga">HubunganKeluarga</th>
+                    <th translate="dsisbyApp.karyawan.jumlahAnak">JumlahAnak</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="karyawan in karyawans">
+                    <td><a ui-sref="karyawanDetail({id:karyawan.id})">{{karyawan.id}}</a></td>
+                    <td>{{karyawan.idAbsensi}}</td>
+                    <td>{{karyawan.namaLengkap}}</td>
+                    <td>{{karyawan.nickname}}</td>
+                    <td>{{karyawan.startWorking}}</td>
+                    <td>{{karyawan.status}}</td>
+                    <td>{{karyawan.phone}}</td>
+                    <td>{{karyawan.birthday}}</td>
+                    <td>{{karyawan.tempatLahir}}</td>
+                    <td>{{karyawan.alamatTinggal}}</td>
+                    <td>{{karyawan.namaKeluarga}}</td>
+                    <td>{{karyawan.hpKeluarga}}</td>
+                    <td>{{karyawan.hubunganKeluarga}}</td>
+                    <td>{{karyawan.jumlahAnak}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="karyawanDetail({id:karyawan.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(karyawan.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(karyawan.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

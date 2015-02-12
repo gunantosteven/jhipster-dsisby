@@ -1,0 +1,126 @@
+
+<div>
+    <h2><span translate="dsisbyApp.karyawan.detail.title">Karyawan</span> {{karyawan.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.idAbsensi">IdAbsensi</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.idAbsensi}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.namaLengkap">NamaLengkap</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.namaLengkap}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.nickname">Nickname</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.nickname}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.startWorking">StartWorking</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.startWorking}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.status">Status</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.status}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.phone">Phone</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.phone}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.birthday">Birthday</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.birthday}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.tempatLahir">TempatLahir</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.tempatLahir}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.alamatTinggal">AlamatTinggal</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.alamatTinggal}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.namaKeluarga">NamaKeluarga</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.namaKeluarga}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.hpKeluarga">HpKeluarga</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.hpKeluarga}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.hubunganKeluarga">HubunganKeluarga</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.hubunganKeluarga}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dsisbyApp.karyawan.jumlahAnak">JumlahAnak</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{karyawan.jumlahAnak}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="karyawan"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
