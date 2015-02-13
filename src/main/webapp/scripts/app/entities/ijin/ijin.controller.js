@@ -14,7 +14,6 @@ angular.module('dsisbyApp')
         $scope.create = function () {
             Ijin.save($scope.ijin,
                 function () {
-                    console.log($scope.ijin.tanggalIjin);
                     $scope.loadAll();
                     $('#saveIjinModal').modal('hide');
                     $scope.clear();
