@@ -24,7 +24,7 @@ angular.module('dsisbyApp')
             })
             .state('ijinuser', {
                 parent: 'entity',
-                url: '/ijin',
+                url: '/ijinuser',
                 data: {
                     roles: ['ROLE_USER']
                 },

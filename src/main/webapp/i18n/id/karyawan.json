@@ -2,7 +2,7 @@
     "dsisbyApp": {
         "karyawan" : {
             "home": {
-                "title": "Master Karyawan",
+                "title": "Semua Karyawan",
                 "createLabel": "Create a new Karyawan",
                 "createOrEditLabel": "Create or edit a Karyawan"
             },

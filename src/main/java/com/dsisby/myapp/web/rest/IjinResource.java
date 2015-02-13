@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.TimeZone;
 import org.joda.time.LocalDate;
+import org.springframework.security.access.annotation.Secured;
 
 /**
  * REST controller for managing Ijin.
@@ -33,6 +34,7 @@ public class IjinResource {
     /**
      * POST  /ijins -> Create a new ijin.
      */
+    @Secured({"ROLE_USER","ROLE_ADMIN"})
     @RequestMapping(value = "/ijins",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -45,6 +47,7 @@ public class IjinResource {
     /**
      * GET  /ijins -> get all the ijins.
      */
+    @Secured ("ROLE_ADMIN")
     @RequestMapping(value = "/ijins",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -57,6 +60,7 @@ public class IjinResource {
     /**
      * GET  /ijins/:id -> get the "id" ijin.
      */
+    @Secured ("ROLE_ADMIN")
     @RequestMapping(value = "/ijins/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -73,6 +77,7 @@ public class IjinResource {
     /**
      * DELETE  /ijins/:id -> delete the "id" ijin.
      */
+    @Secured ("ROLE_ADMIN")
     @RequestMapping(value = "/ijins/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)

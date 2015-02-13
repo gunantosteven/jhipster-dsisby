@@ -2,7 +2,7 @@
     "dsisbyApp": {
         "ijin" : {
             "home": {
-                "title": "Master Ijin",
+                "title": "Ijins",
                 "createLabel": "Create a new Ijin",
                 "createOrEditLabel": "Create or edit a Ijin"
             },
@@ -12,11 +12,11 @@
             "detail": {
                 "title": "Ijin"
             },
-            "tanggalIjin": "Tanggal Ijin",
+            "tanggalIjin": "TanggalIjin",
             "dari": "Dari",
             "sampai": "Sampai",
             "alasan": "Alasan",
-            "karyawan": "Karyawan"
+            "karyawan": "karyawan"
         }
     }
 }

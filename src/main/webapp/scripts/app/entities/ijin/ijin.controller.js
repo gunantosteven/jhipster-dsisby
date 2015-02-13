@@ -1,9 +1,17 @@
 'use strict';
 
 angular.module('dsisbyApp')
-    .controller('IjinController', function ($scope, Ijin, Karyawan) {
+    .controller('IjinController', function ($scope, Ijin, Karyawan, $http) {
         $scope.ijins = [];
         $scope.karyawans = Karyawan.query();
+        $http.get('/api/karyawansidandname').
+            success(function(data) {
+                data = angular.fromJson(data);
+                $scope.karyawansidandname = data;
+            });
+            
+            
+            
         $scope.loadAll = function() {
             Ijin.query(function(result) {
                $scope.ijins = result;
@@ -22,6 +30,17 @@ angular.module('dsisbyApp')
 
         $scope.update = function (id) {
             $scope.ijin = Ijin.get({id: id});
+//            $http.get('/api/ijins/' + id).
+//            success(function(data) {
+//                data = angular.fromJson(data);
+//                var tanggalIjinFrom = data.tanggalIjin.split("-");
+//                data.tanggalIjin = new Date(data.tanggalIjin);
+//                var dariFrom = data.dari.split("-");
+//                data.dari = new Date(data.dari);
+//                var sampaiFrom = data.sampai.split("-");
+//                data.sampai = new Date(data.sampai);
+//                $scope.ijin = data;
+//            });
             $('#saveIjinModal').modal('show');
         };
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import org.springframework.security.access.annotation.Secured;
 
 /**
  * REST controller for managing Karyawan.
@@ -29,6 +30,7 @@ public class KaryawanResource {
     /**
      * POST  /karyawans -> Create a new karyawan.
      */
+    @Secured ("ROLE_ADMIN")
     @RequestMapping(value = "/karyawans",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -41,6 +43,7 @@ public class KaryawanResource {
     /**
      * GET  /karyawans -> get all the karyawans.
      */
+    @Secured({"ROLE_ADMIN"})
     @RequestMapping(value = "/karyawans",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -49,10 +52,38 @@ public class KaryawanResource {
         log.debug("REST request to get all Karyawans");
         return karyawanRepository.findAll();
     }
+    
+    @Secured({"ROLE_USER","ROLE_ADMIN"})
+    @RequestMapping(value = "/karyawansidandname",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Karyawan> getAllOnlyIdAndName() {
+        log.debug("REST request to get all Karyawans");
+        List<Karyawan> karyawans = karyawanRepository.findAll();
+        for(Karyawan karyawan : karyawans)
+        {
+            karyawan.setAlamatTinggal("");
+            karyawan.setBirthday(null);
+            karyawan.setHpKeluarga("");
+            karyawan.setHubunganKeluarga("");
+            karyawan.setIdAbsensi(0);
+            karyawan.setIjins(null);
+            karyawan.setJumlahAnak(0);
+            karyawan.setNamaKeluarga("");
+            karyawan.setNickname("");
+            karyawan.setPhone("");
+            karyawan.setStartWorking(null);
+            karyawan.setStatus("");
+            karyawan.setTempatLahir("");
+        }
+        return karyawans;
+    }
 
     /**
      * GET  /karyawans/:id -> get the "id" karyawan.
      */
+    @Secured ("ROLE_ADMIN")
     @RequestMapping(value = "/karyawans/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -69,6 +100,7 @@ public class KaryawanResource {
     /**
      * DELETE  /karyawans/:id -> delete the "id" karyawan.
      */
+    @Secured ("ROLE_ADMIN")
     @RequestMapping(value = "/karyawans/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)
