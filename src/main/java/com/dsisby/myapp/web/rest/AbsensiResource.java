@@ -36,15 +36,20 @@ public class AbsensiResource {
             method = RequestMethod.POST)
     @Timed
     public @ResponseBody void create(
-            @RequestParam(value="file", required=true) MultipartFile file) throws IOException  {
+            @RequestParam(value="file", required=true) MultipartFile file, @RequestParam(value="namaFile", required=true) String namaFile) throws IOException  {
         Absensi absensi = new Absensi();
-        String fileName=file.getOriginalFilename();
-        absensi.setNamaFile(fileName);
+        if(namaFile != null && !namaFile.trim().equals(""))
+        {
+            absensi.setNamaFile(namaFile);
+        }
+        else
+        {
+            absensi.setNamaFile(file.getOriginalFilename());
+        }
         absensi.setFile(file.getBytes());
         log.debug("REST request to save Absensi : {}", absensi);
         
         absensiRepository.save(absensi);
-        System.out.println(fileName);
     }
 
     /**

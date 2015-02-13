@@ -32,8 +32,10 @@ angular.module('dsisbyApp')
         $scope.create = function () {
             var formData=new FormData();
             formData.append("file",file.files[0]);
+            formData.append("namaFile", document.getElementById('namaFile').value);
             $http.post('/api/absensis', formData, {
                 transformRequest: function(data, headersGetterFunction) {
+                    
                     return data;
                 },
                 headers: { 'Content-Type': undefined }
@@ -67,6 +69,6 @@ angular.module('dsisbyApp')
         };
 
         $scope.clear = function () {
-            $scope.absensi = {namaFile: null, id: null};
+            $scope.absensi = {namaFile: null, id: null, file: null};
         };
     });
