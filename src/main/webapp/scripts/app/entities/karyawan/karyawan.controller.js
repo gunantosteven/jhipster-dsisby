@@ -42,4 +42,20 @@ angular.module('dsisbyApp')
         $scope.clear = function () {
             $scope.karyawan = {idAbsensi: null, namaLengkap: null, nickname: null, startWorking: null, status: null, phone: null, birthday: null, tempatLahir: null, alamatTinggal: null, namaKeluarga: null, hpKeluarga: null, hubunganKeluarga: null, jumlahAnak: null, id: null};
         };
-    });
+    })
+  .directive('ngBootstrapFix',['$filter', function($filter) {
+  return {
+    require: 'ngModel',
+    priority: 1,
+    link: function($scope, $element, $attrs, ngModelCtrl) {
+      ngModelCtrl.$parsers.push(function(viewValue) {
+        viewValue = $filter('date')(viewValue, 'yyyy-MM-dd');
+        return viewValue;
+      });
+      ngModelCtrl.$render = function() {
+        var val = $filter('date')(ngModelCtrl.$viewValue, 'yyyy-MM-dd');
+        $element.val(val);
+      };
+    }
+  };
+}]);

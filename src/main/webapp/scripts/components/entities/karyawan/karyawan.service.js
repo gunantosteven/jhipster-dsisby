@@ -9,9 +9,9 @@ angular.module('dsisbyApp')
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
                     var startWorkingFrom = data.startWorking.split("-");
-                    data.startWorking = new Date(new Date(startWorkingFrom[0], startWorkingFrom[1] - 1, startWorkingFrom[2]));
+                    data.startWorking = new Date(data.startWorking);
                     var birthdayFrom = data.birthday.split("-");
-                    data.birthday = new Date(new Date(birthdayFrom[0], birthdayFrom[1] - 1, birthdayFrom[2]));
+                    data.birthday = new Date(data.birthday);
                     return data;
                 }
             }

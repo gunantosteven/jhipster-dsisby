@@ -3,6 +3,8 @@ package com.dsisby.myapp.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.dsisby.myapp.domain.Ijin;
 import com.dsisby.myapp.repository.IjinRepository;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.TimeZone;
+import org.joda.time.LocalDate;
 
 /**
  * REST controller for managing Ijin.

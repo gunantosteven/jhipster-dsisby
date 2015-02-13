@@ -9,11 +9,11 @@ angular.module('dsisbyApp')
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
                     var tanggalIjinFrom = data.tanggalIjin.split("-");
-                    data.tanggalIjin = new Date(new Date(tanggalIjinFrom[0], tanggalIjinFrom[1] - 1, tanggalIjinFrom[2]));
+                    data.tanggalIjin = new Date(data.tanggalIjin);
                     var dariFrom = data.dari.split("-");
-                    data.dari = new Date(new Date(dariFrom[0], dariFrom[1] - 1, dariFrom[2]));
+                    data.dari = new Date(data.dari);
                     var sampaiFrom = data.sampai.split("-");
-                    data.sampai = new Date(new Date(sampaiFrom[0], sampaiFrom[1] - 1, sampaiFrom[2]));
+                    data.sampai = new Date(data.sampai);
                     return data;
                 }
             }
