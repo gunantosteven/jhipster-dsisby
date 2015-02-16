@@ -25,7 +25,9 @@
             "hpKeluarga": "Hp Keluarga",
             "hubunganKeluarga": "Hubungan Keluarga",
             "jumlahAnak": "Jumlah Anak",
-            "ijin": "ijin"
+            "ijin": "ijin",
+            "statusKerja" : "Status Kerja",
+            "tanggalResign" : "Tanggal Resign"
         }
     }
 }

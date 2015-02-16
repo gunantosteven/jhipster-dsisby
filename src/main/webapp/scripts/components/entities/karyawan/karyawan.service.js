@@ -12,6 +12,8 @@ angular.module('dsisbyApp')
                     data.startWorking = new Date(data.startWorking);
                     var birthdayFrom = data.birthday.split("-");
                     data.birthday = new Date(data.birthday);
+                    var resignFrom = data.tanggalResign.split("-");
+                    data.tanggalResign = new Date(data.tanggalResign);
                     return data;
                 }
             }

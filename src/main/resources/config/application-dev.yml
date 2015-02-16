@@ -1,5 +1,5 @@
 server:
-    port: 8080
+    port: 7070
 
 spring:
     profiles:
@@ -18,9 +18,9 @@ spring:
         database: POSTGRESQL
         openInView: false
         show_sql: true
-        generate-ddl: false
+        generate-ddl: true
         hibernate:
-            ddl-auto: none
+            ddl-auto: update
             naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
         properties:
             hibernate.cache.use_second_level_cache: true
