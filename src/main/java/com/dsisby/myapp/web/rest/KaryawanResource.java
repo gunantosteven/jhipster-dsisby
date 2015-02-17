@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import org.joda.time.LocalDate;
 import org.springframework.security.access.annotation.Secured;
 
 /**
@@ -36,6 +37,18 @@ public class KaryawanResource {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public void create(@RequestBody Karyawan karyawan) {
+        if(karyawan.getBirthday() == null)
+        {
+            karyawan.setBirthday(new LocalDate(0L));
+        }
+        if(karyawan.getStartWorking() == null)
+        {
+            karyawan.setStartWorking(new LocalDate(0L));
+        }
+        if(karyawan.getTanggalResign() == null)
+        {
+            karyawan.setTanggalResign(new LocalDate(0L));
+        }
         log.debug("REST request to save Karyawan : {}", karyawan);
         karyawanRepository.save(karyawan);
     }

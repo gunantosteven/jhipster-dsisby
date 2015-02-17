@@ -40,6 +40,18 @@ public class IjinResource {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public void create(@RequestBody Ijin ijin) {
+        if(ijin.getTanggalIjin() == null)
+        {
+            ijin.setTanggalIjin(new LocalDate(0L));
+        }
+        if(ijin.getDari() == null)
+        {
+            ijin.setDari(new LocalDate(0L));
+        }
+        if(ijin.getSampai() == null)
+        {
+            ijin.setSampai(new LocalDate(0L));
+        }
         log.debug("REST request to save Ijin : {}", ijin);
         ijinRepository.save(ijin);
     }

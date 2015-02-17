@@ -19,6 +19,8 @@
             "status": "Status",
             "phone": "Phone",
             "birthday": "Birthday",
+            "ktp" : "KTP",
+            "email" : "E-mail",
             "tempatLahir": "Tempat Lahir",
             "alamatTinggal": "Alamat Tinggal",
             "namaKeluarga": "Nama Keluarga",

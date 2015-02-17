@@ -61,6 +61,16 @@
                                    ng-model="karyawan.birthday">
                         </div>
                         <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.ktp">Nomer KTP</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.ktp">
+                        </div>
+                        <div class="form-group">
+                            <label translate="dsisbyApp.karyawan.email">E-mail</label>
+                            <input type="text" class="form-control"
+                                   ng-model="karyawan.email">
+                        </div>
+                        <div class="form-group">
                             <label translate="dsisbyApp.karyawan.tempatLahir">TempatLahir</label>
                             <input type="text" class="form-control"
                                    ng-model="karyawan.tempatLahir">
@@ -152,6 +162,8 @@
                     <th translate="dsisbyApp.karyawan.status">Status</th>
                     <th translate="dsisbyApp.karyawan.phone">Phone</th>
                     <th translate="dsisbyApp.karyawan.birthday">Birthday</th>
+                    <th translate="dsisbyApp.karyawan.ktp">KTP</th>
+                    <th translate="dsisbyApp.karyawan.email">E-mail</th>
                     <th translate="dsisbyApp.karyawan.tempatLahir">TempatLahir</th>
                     <th translate="dsisbyApp.karyawan.alamatTinggal">AlamatTinggal</th>
                     <th translate="dsisbyApp.karyawan.namaKeluarga">NamaKeluarga</th>
@@ -173,6 +185,8 @@
                     <td>{{karyawan.status}}</td>
                     <td>{{karyawan.phone}}</td>
                     <td>{{karyawan.birthday}}</td>
+                    <td>{{karyawan.ktp}}</td>
+                    <td>{{karyawan.email}}</td>
                     <td>{{karyawan.tempatLahir}}</td>
                     <td>{{karyawan.alamatTinggal}}</td>
                     <td>{{karyawan.namaKeluarga}}</td>

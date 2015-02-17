@@ -75,6 +75,12 @@ public class Karyawan implements Serializable {
     @Column(name = "status_kerja")
     private String statusKerja;
     
+    @Column(name = "ktp")
+    private String ktp;
+    
+    @Column(name = "email")
+    private String email;
+    
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
     @JsonSerialize(using = CustomLocalDateSerializer.class)
     @JsonDeserialize(using = ISO8601LocalDateDeserializer.class)
@@ -86,6 +92,22 @@ public class Karyawan implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Ijin> ijins = new HashSet<>();
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getKtp() {
+        return ktp;
+    }
+
+    public void setKtp(String ktp) {
+        this.ktp = ktp;
+    }
+   
     public String getStatusKerja() {
         return statusKerja;
     }
