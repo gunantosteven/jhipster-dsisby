@@ -154,47 +154,19 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th translate="dsisbyApp.karyawan.idAbsensi">IdAbsensi</th>
                     <th translate="dsisbyApp.karyawan.namaLengkap">NamaLengkap</th>
                     <th translate="dsisbyApp.karyawan.nickname">Nickname</th>
                     <th translate="dsisbyApp.karyawan.startWorking">StartWorking</th>
-                    <th translate="dsisbyApp.karyawan.status">Status</th>
-                    <th translate="dsisbyApp.karyawan.phone">Phone</th>
-                    <th translate="dsisbyApp.karyawan.birthday">Birthday</th>
-                    <th translate="dsisbyApp.karyawan.ktp">KTP</th>
                     <th translate="dsisbyApp.karyawan.email">E-mail</th>
-                    <th translate="dsisbyApp.karyawan.tempatLahir">TempatLahir</th>
-                    <th translate="dsisbyApp.karyawan.alamatTinggal">AlamatTinggal</th>
-                    <th translate="dsisbyApp.karyawan.namaKeluarga">NamaKeluarga</th>
-                    <th translate="dsisbyApp.karyawan.hpKeluarga">HpKeluarga</th>
-                    <th translate="dsisbyApp.karyawan.hubunganKeluarga">HubunganKeluarga</th>
-                    <th translate="dsisbyApp.karyawan.jumlahAnak">JumlahAnak</th>
-                    <th translate="dsisbyApp.karyawan.statusKerja">Status Kerja</th>
-                    <th translate="dsisbyApp.karyawan.tanggalResign">Tanggal Resign</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="karyawan in karyawans">
-                    <td><a ui-sref="karyawanDetail({id:karyawan.id})">{{karyawan.id}}</a></td>
-                    <td>{{karyawan.idAbsensi}}</td>
-                    <td>{{karyawan.namaLengkap}}</td>
+                    <td><a ui-sref="karyawanDetail({id:karyawan.id})">{{karyawan.namaLengkap}}</a></td>
                     <td>{{karyawan.nickname}}</td>
                     <td>{{karyawan.startWorking}}</td>
-                    <td>{{karyawan.status}}</td>
-                    <td>{{karyawan.phone}}</td>
-                    <td>{{karyawan.birthday}}</td>
-                    <td>{{karyawan.ktp}}</td>
                     <td>{{karyawan.email}}</td>
-                    <td>{{karyawan.tempatLahir}}</td>
-                    <td>{{karyawan.alamatTinggal}}</td>
-                    <td>{{karyawan.namaKeluarga}}</td>
-                    <td>{{karyawan.hpKeluarga}}</td>
-                    <td>{{karyawan.hubunganKeluarga}}</td>
-                    <td>{{karyawan.jumlahAnak}}</td>
-                    <td>{{karyawan.statusKerja}}</td>
-                    <td>{{karyawan.tanggalResign}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="karyawanDetail({id:karyawan.id})"
